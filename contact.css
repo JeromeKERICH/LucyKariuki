@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;1,500&display=swap');
+
+:root {
+    --c-brand: #fac562;
+    --c-dark: #333;
+    --c-pink: #FFC0CB;
+    --c-blue: #0000FF;
+    --c-body: #666;
+    --c-light: #f8f8f8;
+    --c-yellow: #ffff00;
+    --f-base: "Plus Jakarta Sans", sans-serif;
+    --n-height: 100px;
+}
+
+*,*::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+body {
+    color: var(--c-pink);
+    font-family: var(--f-base);
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--c-yellow);
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.heading_1 {
+    font-size: clamp(44px, 10vw, 100px);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.heading-1 {
+    font-size: clamp(32px, 6vw, 54px);
+}
+
+.heading-2 {
+    font-size: clamp(28px, 4vw, 36px);
+}
+
+.heading-3 {
+    font-size: 20px
+}
+
+a {
+    color: var(--c-brand);
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+}
+
+a:hover {
+    color: var(--c-brand);
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 30px;
+    height: var(--n-height);
+    display: flex;
+    z-index: 999;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    color: #fff;
+    font-size: 28px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li:not(:last-child) {
+    margin-right: 44px;
+}
+
+.nav-links li.active a {
+    box-shadow: 0 2px var(--c-brand);
+}
+
+.nav-links li a {
+    color: var(--c-pink);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links li a:hover {
+    color: var(--c-body);
+}
+
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--c-body);
+    font-family: var(--f-base);
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: var(--c-brand);
+    color: #fff;
+}
+
+
+.btn2 {
+    color: var(--c-dark);
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--c-body);
+    font-family: var(--f-base);
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.btn2:hover {
+    background-color: var(--c-brand);
+    color: var(--c-light);
+}
+
+
+
+.hamb {
+    display: block;
+    cursor: pointer;
+    display: none;
+}
+
+.hamb span {
+    display: block;
+    width: 34px;
+    height: 2px;
+    background-color: #fff;
+    margin: 8px auto;
+    transition: all 0.4s ease;
+}
+
+.hamb.active span:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+}
+
+.hamb.active span:nth-child(2) {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+.scrolled {
+    background-color: #fff;
+}
+
+.scrolled .brand {
+    color: var(--c-dark);
+}
+
+.scrolled .nav-links li a {
+    color: var(--c-dark);
+}
+
+.scrolled .nav-links li a:hover {
+    color: var(--c-brand);
+}
+
+.scrolled .hamb span {
+    background-color: var(--c-dark);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: var(--n-height);
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        padding: 0 24px;
+        transition: all 0.3s ease-in-out;
+        height: 0;
+        overflow: hidden;
+        background-color: #fff;
+        justify-content: center;
+    }
+
+    .nav-links.active {
+        color: var(--c-light);
+        height: 350px;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    .nav-links li a {
+        color: #000;
+    }
+
+    .hamb {
+        display: block;
+    }
+}
+
+
