@@ -339,14 +339,14 @@ ul {
 .about {
     text-align: center;
     align-items: center;
-    padding: 1px 0;
+    padding: 10px 0;
     font-size: 28px;
 }
 
 .about-con {
     display: flex;
     flex-wrap: wrap;
-    padding: 50px;
+    padding: 20px;
     width: 100%;
     margin: 0 auto;
 }
@@ -405,11 +405,12 @@ ul {
 @media (max-width: 768px) {
     .about {
         font-size: 24px; 
+        padding: 5px 0;
     }
 
     .about-con {
         flex-direction: column; 
-        padding: 20px; 
+        padding: 10px; 
     }
 
     .content { 
@@ -453,7 +454,7 @@ ul {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
-    padding: 30px;
+    padding: 20px;
 }
 
 .blog-title {
@@ -518,6 +519,12 @@ ul {
 @media (min-width: 768px) {
     .blog {
         grid-template-columns: 1fr 1fr;
+        padding: 5px;
+    }
+
+    .blog-post .content {
+        width: 100%;
+        padding: 10px;
     }
 }
 
