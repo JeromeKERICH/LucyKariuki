@@ -101,6 +101,13 @@ ul {
     justify-content: space-between;
 }
 
+.container .logo {
+    padding-top: 30px;
+    max-width: 100px; /* Ensures the image does not exceed its container width */
+    height: auto; /* Maintains the aspect ratio */
+    width: auto;
+}
+
 .brand {
     color: #fff;
     font-size: 28px;
@@ -233,6 +240,16 @@ ul {
         justify-content: center;
     }
 
+    @media (max-width: 768px) {
+        .navbar .container {
+            width: 95%; /* Adjust the container width for smaller screens */
+        }
+
+        .container .logo {
+            max-width: 100px;
+        }
+    }
+
     .nav-links.active {
         color: var(--c-light);
         height: 250px;
@@ -254,7 +271,7 @@ ul {
 
 .hero {
     min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.945), rgba(0, 0, 0, 0.2)), url(images/1.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.945), rgba(0, 0, 0, 0.2)), url(images/1-min.jpg);
     background-position: center;
     background-size: cover;
     display: grid;
@@ -689,7 +706,7 @@ ul {
 /* footer */
 
 .footer {
-    background: linear-gradient(rgba(0, 0, 0, 0.945), rgba(0, 0, 0, 0.2)), url(images/5.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.945), rgba(0, 0, 0, 0.2)), url(images/5-min.jpg);
     background-size: cover; 
     background-position: center; 
     color: var(--c-light);
