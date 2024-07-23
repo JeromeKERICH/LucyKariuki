@@ -74,3 +74,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+function showDetails(topic) {
+    const details = {
+        tech: {
+            title: "Technology",
+            content: "Our technology section covers the latest trends and innovations in the tech world. From software development to hardware reviews, we bring you the most up-to-date information."
+        },
+        health: {
+            title: "Health & Wellness",
+            content: "Our health and wellness section provides tips and advice for leading a healthier lifestyle. Whether it's mental health, nutrition, or fitness, we've got you covered."
+        },
+        travel: {
+            title: "Travel",
+            content: "Our travel section takes you on a journey to the best destinations around the globe. Find travel tips, guides, and inspiration for your next adventure."
+        }
+    };
+
+    document.getElementById('details-title').innerText = details[topic].title;
+    document.getElementById('details-content').innerText = details[topic].content;
+    document.getElementById('details').style.display = 'block';
+}
+
+function hideDetails() {
+    document.getElementById('details').style.display = 'none';
+}
+
+// Toggle the navigation menu on small screens
+document.querySelector('.hamb').addEventListener('click', function() {
+    document.querySelector('.navbar .container').classList.toggle('show-menu');
+});
+
+

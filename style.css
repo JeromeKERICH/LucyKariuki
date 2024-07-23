@@ -246,7 +246,7 @@ ul {
         }
 
         .container .logo {
-            max-width: 100px;
+            max-width: 60px;
         }
     }
 
@@ -455,6 +455,7 @@ ul {
     grid-template-columns: 1fr;
     gap: 10px;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 .blog-title {
@@ -544,7 +545,7 @@ ul {
 
 .section-title h2 {
     color: var(--c-brand);
-    font-size: 36px;
+    font-size: 34px;
 }
 
 .content-wrapper {
@@ -556,7 +557,7 @@ ul {
 
 .image {
     flex: 1;
-    padding: 20px;
+    padding: 10px;
 }
 
 .image img {
@@ -710,6 +711,8 @@ ul {
 }
 
 
+
+
 /* footer */
 
 .footer {
@@ -763,3 +766,13 @@ ul {
         font-size: 16px;
     }
 }
+
+
+
+
+
+
+
+
+
+
