@@ -27,6 +27,33 @@ navLinksLi.forEach(li =>li.addEventListener('click', ()=> {
 }))
 
 
+//hero section//
+
+const heroes = document.querySelectorAll('.hero');
+let currentIndex = 0;
+
+function showNextHero() {
+    heroes[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % heroes.length;
+    heroes[currentIndex].classList.add('active');
+}
+
+setInterval(showNextHero, 3000); // Change every 2 seconds
+
+// Initialize the first hero
+heroes[currentIndex].classList.add('active');
+
+// Initialize the first hero
+heroes[currentIndex].classList.add('active');
+
+// Initialize the first hero
+heroes[currentIndex].classList.add('active');
+
+// Change content every 2 seconds
+setInterval(showNextContent, 2000);
+
+
+
 // contact //
 
 document.getElementById('contactForm').addEventListener('submit', function(event) {
@@ -37,10 +64,10 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
 
-    // Simple validation (you can add more)
+    
     if (name && email && message) {
         alert('Message sent successfully!');
-        // You can add your AJAX request here to send the form data to your server
+       
     } else {
         alert('Please fill in all fields.');
     }
@@ -49,26 +76,21 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const readMoreLinks = document.querySelectorAll('.read-more');
-    
-    readMoreLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetId = this.getAttribute('data-target');
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                if (targetElement.style.display === 'none' || targetElement.style.display === '') {
-                    targetElement.style.display = 'inline';
-                    this.textContent = 'Read Less';
-                } else {
-                    targetElement.style.display = 'none';
-                    this.textContent = 'Read More';
-                }
-            }
-        });
+    const readMoreButton = document.querySelector('.read-more');
+    const moreContent = document.getElementById('more-intro');
+
+    readMoreButton.addEventListener('click', function(event) {
+      event.preventDefault(); 
+
+      if (moreContent.style.display === 'none' || moreContent.style.display === '') {
+        moreContent.style.display = 'inline';
+        readMoreButton.textContent = 'Read Less';
+      } else {
+        moreContent.style.display = 'none'; 
+        readMoreButton.textContent = 'Read More'; 
+      }
     });
-});
+  });
 
 
 

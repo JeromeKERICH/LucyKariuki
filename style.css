@@ -269,6 +269,9 @@ ul {
 }
 
 
+
+/* hero */
+
 .hero {
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.945), rgba(0, 0, 0, 0.2)), url(images/1-min.jpg);
@@ -333,6 +336,28 @@ ul {
     }
 }
 
+/* About Section */
+.about-con {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.about-con .content {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-con .image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-con .image img {
+    max-width: 100%;
+    height: auto;
+}
 
 /* about section */
 
@@ -362,7 +387,7 @@ ul {
     font-size: 20px;
 }
 
-.content #p {
+.content p {
     padding: 10px 0;
     color: var(--c-dark);
     text-align: justify;
@@ -531,107 +556,6 @@ ul {
 
 
 
-/* our team section */
-
-.team {
-    padding: 50px;
-}
-
-.section-title {
-    text-align: center;
-    padding: 10px 0;
-    font-size: 28px;
-}
-
-.section-title h2 {
-    color: var(--c-brand);
-    font-size: 34px;
-}
-
-.content-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.image {
-    flex: 1;
-    padding: 10px;
-}
-
-.image img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
-
-.content {
-    flex: 1;
-    padding: 20px;
-    
-}
-
-.content h3 {
-    color: var(--c-pink);
-    font-size: 24px;
-}
-
-.content p {
-    padding: 10px 0;
-    color: var(--c-dark);
-    text-align: justify;
-}
-
-.content-list {
-    color: var(--c-dark);
-    font-style: italic;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.more-content {
-    display: none;
-}
-
-
-.read-more {
-    color: var(--c-brand);
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    .team {
-        padding: 10px;
-    }
-    .content-wrapper {
-        flex-direction: column; 
-        align-items: center; 
-    }
-
-    .content {
-        flex: 1; 
-    }
-
-    .image img {
-        width: 100%;
-        max-height: none;
-    }
-
-    .section-title h2 {
-        font-size: 28px; 
-    }
-
-    .content h3 {
-        font-size: 20px; 
-    }
-
-}
-
-
 
 /*testimonials*/ 
 .section-header {
@@ -733,6 +657,10 @@ ul {
     font-size: 25px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: var(--c-yellow);
+}
+
+.footer-content p a {
+    text-decoration: underline;
 }
 
 .social-links {
