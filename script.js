@@ -27,30 +27,14 @@ navLinksLi.forEach(li =>li.addEventListener('click', ()=> {
 }))
 
 
-//hero section//
+document.addEventListener('DOMContentLoaded', function() {
 
-const heroes = document.querySelectorAll('.hero');
-let currentIndex = 0;
+    var h1Element = document.querySelector('.hero h2');
+    
+    
+    h1Element.classList.add('slide-in');
+});
 
-function showNextHero() {
-    heroes[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % heroes.length;
-    heroes[currentIndex].classList.add('active');
-}
-
-setInterval(showNextHero, 3000); // Change every 2 seconds
-
-// Initialize the first hero
-heroes[currentIndex].classList.add('active');
-
-// Initialize the first hero
-heroes[currentIndex].classList.add('active');
-
-// Initialize the first hero
-heroes[currentIndex].classList.add('active');
-
-// Change content every 2 seconds
-setInterval(showNextContent, 2000);
 
 
 
@@ -126,4 +110,28 @@ document.querySelector('.hamb').addEventListener('click', function() {
     document.querySelector('.navbar .container').classList.toggle('show-menu');
 });
 
+
+
+// about
+
+document.addEventListener('DOMContentLoaded', function () {
+    const hamb = document.querySelector('.hamb');
+    const navLinks = document.querySelector('.nav-links');
+    const serviceHeadings = document.querySelectorAll('.service_heading');
+
+    hamb.addEventListener('click', function () {
+        hamb.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    serviceHeadings.forEach(function (heading) {
+        heading.addEventListener('click', function () {
+            this.classList.toggle('active');
+            const serviceList = this.nextElementSibling;
+            if (serviceList) {
+                serviceList.classList.toggle('active');
+            }
+        });
+    });
+});
 

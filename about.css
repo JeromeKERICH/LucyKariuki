@@ -190,7 +190,7 @@ ul {
         transition: all 0.3s ease-in-out;
         height: 0;
         overflow: hidden;
-        background-color: var(--c-pink);
+        background-color: var(--c-light);
         justify-content: center;
     }
 
@@ -285,10 +285,21 @@ ul {
     font-weight: 200;
 }
 
+.content .article h3 strong {
+    color: cadetblue;
+    font-size: 30px;
+    font-style: italic;
+}
+
 .content .article p{
     margin-top: 20px;
     font-size: 17px;
     color: var(--c-body);
+}
+
+.content .article p a {
+    font-size: 20px;
+    text-decoration: underline;
 }
 
 .content .article .button {
@@ -351,6 +362,19 @@ ul {
         margin: auto;
     }
 
+    .content .article h3 {
+        text-align: justify;
+        font-size: 20px;
+    }
+
+    .content .article h3 strong {
+        font-size: 25px;
+    }
+
+    .content .article p {
+        text-align: justify;
+    }
+
     .image-section {
         float: none;
         width: 100%;
@@ -371,180 +395,170 @@ ul {
 
 /*service*/
 
-.service {
+#greyback {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    height: 500px;
+    width: 650px;
+    background-color: antiquewhite;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: -1;
+    opacity: 0.1;
+}
+
+
+.service_con {
     width: 100%;
-    padding: 50px;
-}
-
-.service-heading h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2em;
-    color: var(--c-brand);
-    font-weight: 300;
-}
-
-.service-section {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px 12%;
+    margin-top: 50px;
 }
 
-.service-box {
-    padding: 20px;
-    margin: 10px;
-    text-align: center;
-    border-radius: 8px;
-    color: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+.service_wrapper .service_cont {
+    display: flex;
+    gap: 10px;
     width: 100%;
 }
 
-.service-box:hover {
-    background-color: var(--c-dark);
-    transition: 1s;
-}
-
-.service-box h3 {
-    margin-bottom: 10px;
-    font-size: 1.5em;
-    color: var(--c-pink);
-    font-weight: 200;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.service-box ul {
-   list-style: none;
-    padding: 0;
-    margin: 10px 0;
-}
-
-.service-box ul li {
-    margin-bottom: 5px;
-}
-
-.price {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-.btn1 {
-    text-decoration: underline;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    
-}
-
-/* Different Shades for Background Colors */
-.box1 {
-    background-color: #708090; /* Lighter Blue */
-}
-
-.box2 {
-    background-color: #5dade2; /* Lighter Red */
-}
-
-.box3 {
-    background-color: #708090; /* Lighter Green */
-}
-
-.box4 {
-    background-color: #708090; /* Yellow */
-}
-
-/* Responsive Layout */
-@media (min-width: 768px) {
-    .service-box {
-        flex: 1 1 calc(33.333% - 20px);
-    }
-}
-
-@media (min-width: 1024px) {
-    .service-box {
-        flex: 1 1 calc(25% - 20px);
-    }
-}
-
-
-
-/* team section */
-.team {
+.service_wrapper .service_cont div {
     width: 100%;
-    padding: 50px;
 }
 
-.team-heading h2 {
-    text-align: center;
-    font-size: 2em;
+.service_wrapper .service_cont .title {
+    font-size: 25px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, cadetblue 0%, black 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+.service_wrapper .service_cont h3 {
+    font-size: 35px;
     color: var(--c-brand);
-    margin-bottom: 30px;
-    font-weight: 300;
+    line-height: 5px;
+    width: 100%;
 }
 
-.team-member {
+.service_wrapper .service_cont p {
+    width: 90%;
+    color: var(--c-body);
+    margin: 10px 0;
+}
+
+
+.service_content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-    padding: 20px;
-}
-
-.team-image img {
     width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
+    margin-top: 60px;
 }
 
-.team-bio {
-    max-width: 600px;
+.service_content .services {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-.team-bio h3 {
-    margin-bottom: 10px;
-    font-size: 1.8em;
-    color: lightseagreen;
+.service_content .services .service_heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 42px;
+    border-bottom: 0.2px solid grey;
+    transition: 1s;
+    position: relative;
 }
 
-.team-bio p {
-    font-size: 1em;
-    color: #666;
-    text-align: justify;
+
+.service_content .services .service_heading h2 {
+    font-size: 30px;
+    color: cadetblue;
+    letter-spacing: 0.6px;
+    font-weight: 500;
 }
 
-/* Social Media Links Styling */
-.social-media {
-    margin-top: 15px;
+.service_content .services .service_heading i {
+    font-size: 25px;
+    color: var(--c-blue);
 }
 
-.social-media a {
-    margin: 0 10px;
-    color: #333;
-    font-size: 1.5em;
-    transition: color 0.3s ease, transform 0.3s ease;
+.service_list {
+    display: none;
+    padding-left: 20px;
 }
 
-.social-media a:hover {
-    color: #007bff; /* Change to your preferred color */
-    transform: scale(1.2);
+/* Show the list when active */
+.service_list.active {
+    display: block;
 }
 
-/* Responsive Layout */
-@media (min-width: 768px) {
-    .team-member {
-        flex-direction: row;
-        text-align: left;
+.service_heading i {
+    cursor: pointer;
+}
+
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
     }
 
-    .team-image {
-        flex: 1;
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .service_con {
+        flex-direction: column;
+        padding: 20px 5%;
+    }
+    
+    .service_wrapper .service_cont {
+        flex-direction: column;
+        padding: 10px;
     }
 
-    .team-bio {
-        flex: 2;
+    .service_content {
+        margin-top: 30px;
+    }
+
+    .service_cont p {
+        text-align: center;
+        align-items: center;
+    }
+
+    .service_cont h3 {
+        align-items: center;
+        text-align: center;
+    }
+
+    .service_wrapper .service_cont >p {
         padding-left: 20px;
+        margin-top: 30px;
+        text-align: justify;
+    }
+    
+    .service_heading {
+        padding: 20px;
     }
 }
+
+
+/* Example responsive adjustments */
+@media (max-width: 768px) {
+    .service_content {
+        flex-direction: column;
+    }
+}
+
 
 
 /*footer*/
