@@ -114,24 +114,26 @@ document.querySelector('.hamb').addEventListener('click', function() {
 
 // about
 
-document.addEventListener('DOMContentLoaded', function () {
-    const hamb = document.querySelector('.hamb');
-    const navLinks = document.querySelector('.nav-links');
-    const serviceHeadings = document.querySelectorAll('.service_heading');
+let currentSlide = 0;
+const teamContainer = document.querySelector('.team-container');
+const teamMembers = document.querySelectorAll('.team-member');
+const totalSlides = teamMembers.length;
 
-    hamb.addEventListener('click', function () {
-        hamb.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
+function showSlide(slideIndex) {
+    const slideWidth = teamMembers[0].clientWidth + 20; // Width + gap
+    teamContainer.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+}
 
-    serviceHeadings.forEach(function (heading) {
-        heading.addEventListener('click', function () {
-            this.classList.toggle('active');
-            const serviceList = this.nextElementSibling;
-            if (serviceList) {
-                serviceList.classList.toggle('active');
-            }
-        });
-    });
+document.addEventListener('swiped-left', () => {
+    if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
+    }
 });
 
+document.addEventListener('swiped-right', () => {
+    if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
+    }
+});

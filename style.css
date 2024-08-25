@@ -366,28 +366,9 @@ ul {
     }
 }
 
-/* About Section */
-.about-con {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 20px 0;
-}
 
-.about-con .content {
-    flex: 1;
-    padding: 20px;
-}
 
-.about-con .image {
-    flex: 1;
-    text-align: center;
-}
 
-.about-con .image img {
-    max-width: 100%;
-    height: auto;
-}
 
 /* about section */
 
@@ -398,12 +379,41 @@ ul {
     font-size: 28px;
 }
 
+.about h2 {
+    margin-top: 30px;
+    color: var(--c-brand);
+    font-size: 35px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .about-con {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
     width: 100%;
     margin: 0 auto;
+}
+
+.about-con ul {
+    width: 100%;
+    padding-left: 30px;
+}
+
+.about-con ul li {
+    color: var(--c-body);
+    list-style: disc;
+}
+
+.about-con .image {
+    flex: 1;
+    text-align: center;
+}
+
+
+.about-con .image img {
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .content {
@@ -424,37 +434,16 @@ ul {
 }
 
 #text {
-    display: block;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-#text {
-    display: block;
+    display: none;
     overflow: hidden;
     transition: max-height 0.3s ease;
 }
 
 /* Hide the button by default */
 #read-more-btn {
-    display: none;
+    display: block;
     cursor: pointer;
-    color: var(--c-brand);
-    text-decoration: underline;
-}
-
-.image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.image img {
-    max-width: 100%;
-    max-height: 500px;
-    border-radius: 10px;
+    text-decoration: none;
 }
 
 @media (max-width: 768px) {
@@ -471,16 +460,16 @@ ul {
     .content { 
         padding: 10px; 
     }
-    .image {
+    .about-con .image {
         flex: 1 1 100%;
         width: 100%; 
         max-height: 300px; 
         overflow: hidden; 
     }
 
-    .image img {
-        max-width: 100%;
-        max-height: 300px; 
+    .about-con .image img {
+        width: 100%;
+        height: 300px; 
         height: auto;    
         object-fit: cover;
     }
@@ -492,7 +481,8 @@ ul {
     }
 
     #text {
-        max-height: 100px; /* Default height on small screens */
+        max-height: 100px;
+        display: none; /* Default height on small screens */
     }
 
     #read-more-btn {
