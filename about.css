@@ -126,9 +126,10 @@ ul {
 }
 
 .nav-links li a {
-    color: var(--c-pink);
+    color: var(--c-dark);
     font-size: 13px;
     text-transform: uppercase;
+    font-size: 15px;
     letter-spacing: 1px;
 }
 
@@ -210,7 +211,7 @@ ul {
 }
 
 .scrolled .brand {
-    color: var(--c-dark);
+    color: var(--c-body);
 }
 
 .scrolled .nav-links li a {
@@ -320,8 +321,9 @@ ul {
     width: 45%;
 }
 .image-section img {
-    width: 100%;
+    width: 60%;
     height: auto;
+    margin-left: 150px;
 }
 
 .content .article h3 {
@@ -529,6 +531,7 @@ ul {
     width: 90%;
     color: var(--c-body);
     margin: 10px 0;
+    text-align: justify;
 }
 
 
@@ -569,13 +572,24 @@ ul {
 }
 
 .service_list {
-    display: none;
-    padding-left: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    color: var(--c-body);
+}
+
+.service_list li {
+    list-style: circle;
+    font-size: 18px;
+    margin: 25px;
 }
 
 /* Show the list when active */
 .service_list.active {
-    display: block;
+    max-height: 300px; /* Adjust based on content height */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: max-height 0.5s ease-in, padding 0.5s ease-in;
 }
 
 .service_heading i {
@@ -616,12 +630,11 @@ ul {
 
     .service_content .services .service_heading {
         padding: 20px;
-        justify-content: center;
+        justify-content: start;
     }
 
     .service_content .services .service_heading h2 {
         font-size: 25px;
-        text-align: center;
     }
 
     .service_content .services .service_heading i {

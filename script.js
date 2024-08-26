@@ -112,6 +112,49 @@ document.querySelector('.hamb').addEventListener('click', function() {
 
 
 
+//services 
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Select all service headings
+    const serviceHeadings = document.querySelectorAll(".service_heading");
+
+    serviceHeadings.forEach(heading => {
+        heading.addEventListener("click", function() {
+            // Get the corresponding service list
+            const serviceList = this.nextElementSibling;
+            const isActive = serviceList.classList.contains("active");
+
+            // Close all other open lists and reset icons
+            document.querySelectorAll(".service_list.active").forEach(list => {
+                if (list !== serviceList) {
+                    list.classList.remove("active");
+                    list.style.maxHeight = "0";
+                    const icon = list.previousElementSibling.querySelector("i");
+                    icon.classList.replace("ri-subtract-line", "ri-add-line");
+                }
+            });
+
+            // Toggle the current list
+            serviceList.classList.toggle("active");
+
+            // Toggle the icon
+            const icon = this.querySelector("i");
+            if (!isActive) {
+                // Expand the list
+                serviceList.style.maxHeight = serviceList.scrollHeight + "px";
+                icon.classList.replace("ri-add-line", "ri-subtract-line");
+            } else {
+                // Collapse the list
+                serviceList.style.maxHeight = "0";
+                icon.classList.replace("ri-subtract-line", "ri-add-line");
+            }
+        });
+    });
+});
+
+
+
+
 // about
 
 let currentSlide = 0;
@@ -137,3 +180,21 @@ document.addEventListener('swiped-right', () => {
         showSlide(currentSlide);
     }
 });
+
+
+//newsletter 
+
+document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = e.target.querySelector('input[type="email"]').value;
+
+    if (email) {
+        alert(`Thank you for subscribing with: ${email}`);
+        e.target.reset(); // Reset the form
+    } else {
+        alert('Please enter a valid email address.');
+    }
+});
+
+
+AOS.init();
