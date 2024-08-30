@@ -84,6 +84,8 @@ ul {
     padding-right: 15px;
 }
 
+
+
 .navbar {
     position: fixed;
     top: 0;
@@ -101,9 +103,11 @@ ul {
     justify-content: space-between;
 }
 
-.container .logo {
+
+
+.container .h2 {
     padding-top: 30px;
-    max-width: 100px; /* Ensures the image does not exceed its container width */
+    max-width: 300px; /* Ensures the image does not exceed its container width */
     height: auto; /* Maintains the aspect ratio */
     width: auto;
 }
