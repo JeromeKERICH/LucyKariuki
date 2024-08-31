@@ -584,6 +584,11 @@ ul {
     margin: 25px;
 }
 
+
+.rotate-icon {
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+}
 /* Show the list when active */
 .service_list.active {
     max-height: 300px; /* Adjust based on content height */
@@ -799,7 +804,7 @@ ul {
 .contact-section {
     display: flex;
     flex-wrap: wrap;
-    padding: 10px 70px;
+    padding: 10px 20px;
     background-color: #f4f4f4;
     border-radius: 10px;
     margin: 20px 0;
