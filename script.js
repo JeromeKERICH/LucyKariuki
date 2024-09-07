@@ -37,26 +37,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+//hero//
+
+
 
 // contact //
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
 
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    var email = document.getElementById('email').value;
 
-    
-    if (name && email && message) {
-        alert('Message sent successfully!');
-       
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var message = document.getElementById('message');
+  
+    if (emailPattern.test(email)) {
+      message.textContent = 'Email is valid!';
+      message.style.color = 'green';
+  
+      document.getElementById('myForm').reset();
     } else {
-        alert('Please fill in all fields.');
-    }
-});
 
+      message.textContent = 'Please enter a valid email address.';
+      message.style.color = 'red';
+    }
+  });
+  
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -127,31 +133,7 @@ serviceHeadings.forEach(heading => {
 
 
 
-// about
 
-let currentSlide = 0;
-const teamContainer = document.querySelector('.team-container');
-const teamMembers = document.querySelectorAll('.team-member');
-const totalSlides = teamMembers.length;
-
-function showSlide(slideIndex) {
-    const slideWidth = teamMembers[0].clientWidth + 20; // Width + gap
-    teamContainer.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
-}
-
-document.addEventListener('swiped-left', () => {
-    if (currentSlide < totalSlides - 1) {
-        currentSlide++;
-        showSlide(currentSlide);
-    }
-});
-
-document.addEventListener('swiped-right', () => {
-    if (currentSlide > 0) {
-        currentSlide--;
-        showSlide(currentSlide);
-    }
-});
 
 
 //newsletter 

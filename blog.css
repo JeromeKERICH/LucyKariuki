@@ -84,6 +84,8 @@ ul {
     padding-right: 15px;
 }
 
+
+
 .navbar {
     position: fixed;
     top: 0;
@@ -101,9 +103,11 @@ ul {
     justify-content: space-between;
 }
 
+
+
 .container .logo {
     padding-top: 30px;
-    max-width: 100px; /* Ensures the image does not exceed its container width */
+    max-width: 400px; /* Ensures the image does not exceed its container width */
     height: auto; /* Maintains the aspect ratio */
     width: auto;
 }
@@ -122,11 +126,11 @@ ul {
 }
 
 .nav-links li.active a {
-    box-shadow: 0 2px var(--c-brand);
+    box-shadow: 0 2px var(--c-body);
 }
 
 .nav-links li a {
-    color: var(--c-pink);
+    color: var(--c-dark);
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -192,7 +196,7 @@ ul {
     display: block;
     width: 34px;
     height: 2px;
-    background-color: #fff;
+    background-color: var(--c-dark);
     margin: 8px auto;
     transition: all 0.4s ease;
 }
@@ -236,7 +240,7 @@ ul {
         transition: all 0.3s ease-in-out;
         height: 0;
         overflow: hidden;
-        background-color: var(--c-pink);
+        background-color: var(--c-light);
         justify-content: center;
     }
 
@@ -246,7 +250,7 @@ ul {
         }
 
         .container .logo {
-            max-width: 100px;
+            max-width: 150px;
         }
     }
 
@@ -270,24 +274,22 @@ ul {
     
 
 .detailed-post {
-    background: #fff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 80px; /* Space from the fixed navbar */
+    margin-top: 100px; /* Space from the fixed navbar */
     margin-bottom: 20px;
 }
 
 .detailed-post .image {
+    display: none;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .detailed-post .image img {
     max-width: 100%;
+    height: auto;
     border-radius: 10px;
 }
-
 .detailed-post .content {
     text-align: left;
 }
@@ -295,7 +297,7 @@ ul {
 .detailed-post .content h1 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: var(--c-pink);
+    color: var(--c-brand);
 }
 
 .detailed-post .columns {
@@ -312,7 +314,7 @@ ul {
 .detailed-post .column h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: var(--c-yellow);
+    color: cadetblue;
 }
 
 .detailed-post .column p {
@@ -364,4 +366,34 @@ ul {
     .detailed-post .column {
         min-width: 100%;
     }
+}
+
+
+/*whats app float*/
+
+.whatsapp_float {
+    position: fixed;
+    width: 45px; 
+    height: 45px; 
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px; 
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+}
+
+.whatsapp-icon {
+    margin-top: 16px;
+}
+
+.whatsapp_float:hover {
+    background-color: #128c7e;
+    color: #FFF;
+    text-decoration: none;
 }

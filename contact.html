@@ -20,7 +20,7 @@
             <h2>Contact Details</h2>
             <p><strong>Address:</strong> Nairobi County, Kenya</p>
             <p><strong>Phone: </strong> +254 729 442536</p>
-            <p><strong>Email:</strong><a href="#"> support@thrivingmspace.com</a></p>
+            <p><strong>Email:</strong><a href="mailto:support@thrivingmomspace.com"> support@thrivingmspace.com</a></p>
             <p><strong>Chat with us:</strong><a href="https://wa.link/qah82m" target="_blank">WhatsApp</a></p>
         </div>
 
@@ -30,7 +30,7 @@
         
         <div class="contact-form">
             <h2>Leave a Message</h2>
-            <form>
+            <form id="contactForm" action="mail.thrivingmomspace.com" method="POST">
                 <div class="form-group">
                     <input type="text" name="name" required>
                     <label for="name">Name</label>
@@ -47,6 +47,18 @@
             </form>
         </div>
     </div>
+
+
+
+
+
+
+    <div class="whatsapp_container">
+        <a href="https://wa.me/254729442536" class="whatsapp_float" target="_blank">
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+        </a>
+    </div>
+    
     
 
 
@@ -57,7 +69,25 @@
 
 
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var form = event.target;
+            var formData = new FormData(form);
+            var resultMessage = document.getElementById('result');
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+            }).then(response => response.text()).then(text => {
+                resultMessage.textContent = text;
+                form.reset(); // Clear the form after successful submission
+            }).catch(error => {
+                resultMessage.textContent = "Error submitting form!";
+            });
+        });
+    </script>
 
 
 </body>

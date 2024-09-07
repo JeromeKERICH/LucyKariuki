@@ -85,6 +85,7 @@ ul {
 }
 
 
+
 .navbar {
     position: fixed;
     top: 0;
@@ -102,9 +103,11 @@ ul {
     justify-content: space-between;
 }
 
+
+
 .container .logo {
     padding-top: 30px;
-    max-width: 100px; /* Ensures the image does not exceed its container width */
+    max-width: 400px; /* Ensures the image does not exceed its container width */
     height: auto; /* Maintains the aspect ratio */
     width: auto;
 }
@@ -113,6 +116,7 @@ ul {
     color: #fff;
     font-size: 28px;
 }
+
 .nav-links {
     display: flex;
 }
@@ -122,11 +126,11 @@ ul {
 }
 
 .nav-links li.active a {
-    box-shadow: 0 2px var(--c-brand);
+    box-shadow: 0 2px var(--c-body);
 }
 
 .nav-links li a {
-    color: var(--c-pink);
+    color: var(--c-dark);
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -134,6 +138,19 @@ ul {
 
 .nav-links li a:hover {
     color: var(--c-body);
+}
+
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--c-body);
+    font-family: var(--f-base);
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    font-size: 14px;
+    border-radius: 5px;
 }
 
 .btn:hover {
@@ -169,8 +186,6 @@ ul {
 
 
 
-
-
 .hamb {
     display: block;
     cursor: pointer;
@@ -181,7 +196,7 @@ ul {
     display: block;
     width: 34px;
     height: 2px;
-    background-color: var(--c-body);
+    background-color: var(--c-dark);
     margin: 8px auto;
     transition: all 0.4s ease;
 }
@@ -225,17 +240,17 @@ ul {
         transition: all 0.3s ease-in-out;
         height: 0;
         overflow: hidden;
-        background-color: var(--c-pink);
+        background-color: var(--c-light);
         justify-content: center;
     }
 
     @media (max-width: 768px) {
         .navbar .container {
-            width: 95%; 
+            width: 95%; /* Adjust the container width for smaller screens */
         }
 
         .container .logo {
-            max-width: 60px;
+            max-width: 150px;
         }
     }
 
@@ -249,7 +264,7 @@ ul {
     }
 
     .nav-links li a {
-        color: #333;
+        color: #000;
     }
 
     .hamb {
@@ -386,6 +401,37 @@ ul {
         padding: 10px;
     }
 }
+
+
+/*whats app float*/
+
+.whatsapp_float {
+    position: fixed;
+    width: 45px; 
+    height: 45px; 
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px; 
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+}
+
+.whatsapp-icon {
+    margin-top: 16px;
+}
+
+.whatsapp_float:hover {
+    background-color: #128c7e;
+    color: #FFF;
+    text-decoration: none;
+}
+
 
 .footer {
     background: linear-gradient(rgba(0, 0, 0, 0.945), rgba(0, 0, 0, 0.2)), url(images/5-min.jpg);

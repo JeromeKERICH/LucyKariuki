@@ -107,7 +107,7 @@ ul {
 
 .container .logo {
     padding-top: 30px;
-    max-width: 200px; /* Ensures the image does not exceed its container width */
+    max-width: 400px; /* Ensures the image does not exceed its container width */
     height: auto; /* Maintains the aspect ratio */
     width: auto;
 }
@@ -126,11 +126,11 @@ ul {
 }
 
 .nav-links li.active a {
-    box-shadow: 0 2px var(--c-brand);
+    box-shadow: 0 2px var(--c-body);
 }
 
 .nav-links li a {
-    color: var(--c-pink);
+    color: var(--c-dark);
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -196,7 +196,7 @@ ul {
     display: block;
     width: 34px;
     height: 2px;
-    background-color: #fff;
+    background-color: var(--c-dark);
     margin: 8px auto;
     transition: all 0.4s ease;
 }
@@ -250,7 +250,7 @@ ul {
         }
 
         .container .logo {
-            max-width: 60px;
+            max-width: 150px;
         }
     }
 
@@ -275,100 +275,179 @@ ul {
 
 
 /* hero */
-
 .hero {
-    min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.945), rgba(0, 0, 0, 0.2)), url(images/1-min.jpg);
-    background-position: center;
-    background-size: cover;
-    display: grid;
-    place-content: center;
-    text-align: center;
-}
-
-.hero h1 {
-    padding: 25px 0;
-    color: var(--c-yellow);
-}
-
-.hero h2 {
-    color: var(--c-pink);
-}
-
-.hero h1 span {
-    color: var(--c-pink);
-    font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 48px;
-}
-
-.hero .btn2 {
-    margin-top: 50px;
-    color: var(--c-light);
-    display: inline-block;
-    background-color: cadetblue;
-    border: 1px solid var(--c-body);
-    font-family: var(--f-base);
-    padding: 10px 16px;
-    cursor: pointer;
-    transition: all 0.4s ease-in-out;
-    font-size: 14px;
-    border-radius: 5px;
-}
-
-.btn2-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffffff, #f5f5f5, #e0e0e0); 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+    padding: 0 10%;
+    transition: all 0.3s ease;
 }
 
-.btn2:hover {
-    background-color: var(--c-brand);
-    color: var(--c-light);
+.hero-text h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--c-body);
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hero-text h1 {
+    font-family: monospace;
+    font-size: 60px;
+    line-height: 1;
+    color: goldenrod;
+    margin: 0 0 25px;
+}
+
+.hero-text h4 {
+    font-size: 22px;
+    font-weight: 600;
+    color: rgb(193, 243, 11);
+    margin-bottom: 10px;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.hero-text p {
+    color: var(--c-dark);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.hero-img img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    object-fit: cover;
+}
+
+.hero-text a {
+    display: inline-block;
+    color: white;
+    background: cadetblue;
+    border: 1px solid transparent;
+    padding: 12px 25px;
+    line-height: 1;
+    font-size: 14px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all 0.55s ease;
+}
+
+.hero-text a:hover {
+    background: var(--c-brand);
+    border: 1px solid #fff;
+    transform: translateX(5px);
+}
+
+/* Social Icons */
+.icons {
+    position: absolute;
+    top: 50%;
+    padding: 0 5%;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin: 20px 0;
+    font-size: 24px;
+    color: white;
+    transition: all 0.55s ease;
+}
+
+.icons i:hover {
+    color: #4d9559;
+    transform: translateY(-5px);
 }
 
 
-/* Keyframes for sliding effect */
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
+
+@media (max-width: 992px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 0 8%;
+        text-align: start;
+        
     }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
 
-/* Class to apply the sliding effect */
-.slide-in {
-    animation: slideIn 1s ease-out;
-}
-
-
-
-@media (max-width: 768px) {
-
-    .hero h1 {
-        padding: 10px;
-        font-size: 25px;
+    .hero-text {
+        margin-bottom: 30px;
+        margin-top: 100px;
     }
 
-    .hero h2{
-        margin-top: 50px;
-        padding: 20px;
-        color: var(--c-pink);
-        font-size: 18px;
+    .hero-text h1 {
+        font-size: 50px;
+    }
+
+    .hero-text h5 {
+        font-size: 12px;
+    }
+
+    .hero-text p {
         text-align: justify;
     }
-    .hero .btn2 {
-        margin-top: 25px;
-        padding: 12px;
-        font-size: 12px;
-        width: 50%;
+
+    .icons {
+        display: none;
     }
 }
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+    .hero-text h4 {
+        font-size: 16px;
+    }
+
+    .hero-text h5 {
+        font-size: 12px;
+    }
+
+    .hero-text p {
+        margin-bottom: 10px;
+    }
+
+    .hero-img img {
+        max-width: 500px;
+    }
+
+    .hero-text a {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .hero-text h1 {
+        font-size: 30px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .hero-img img {
+        max-width: 350px;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -449,6 +528,7 @@ ul {
     cursor: pointer;
     text-decoration: none;
 }
+
 
 @media (max-width: 768px) {
     .about {
@@ -953,6 +1033,34 @@ ul {
     .newsletter-form button {
         margin-top: 10px;
     }
+}
+
+
+.whatsapp_float {
+    position: fixed;
+    width: 45px; 
+    height: 45px; 
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px; 
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+}
+
+.whatsapp-icon {
+    margin-top: 16px;
+}
+
+.whatsapp_float:hover {
+    background-color: #128c7e;
+    color: #FFF;
+    text-decoration: none;
 }
 
 
