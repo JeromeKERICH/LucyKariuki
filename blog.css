@@ -273,9 +273,12 @@ ul {
 }
     
 
+
+/*blog pos */
+
 .detailed-post {
     padding: 20px;
-    margin-top: 100px; /* Space from the fixed navbar */
+    margin-top: 100px; 
     margin-bottom: 20px;
 }
 
@@ -295,9 +298,23 @@ ul {
 }
 
 .detailed-post .content h1 {
-    font-size: 2rem;
+    font-size: 30;
     margin-bottom: 20px;
     color: var(--c-brand);
+    text-align: center;
+}
+
+.detailed-post .content h2 {
+    font-size: 25px;
+    color: cadetblue;
+    margin-bottom: 20px;
+}
+
+.detailed-post .content h3 {
+    font-size: 20px;
+    color: rgb(48, 29, 5);
+    font-style: italic;
+    
 }
 
 .detailed-post .columns {
@@ -333,7 +350,7 @@ ul {
 }
 
 .detailed-post .column a {
-    color: #007BFF;
+    color: var(--c-brand);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -345,19 +362,28 @@ ul {
 .detailed-post .content a.btn2 {
     display: inline-block;
     padding: 10px 20px;
-    background: #007BFF;
+    background: cadetblue;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px;
     transition: background 0.3s ease;
+    border: none;
 }
 
 .detailed-post .content a.btn2:hover {
-    background: #0056b3;
+    background: var(--c-brand);
 }
 
 
 @media (max-width: 768px) {
+
+    .detailed-post .content h1 {
+        font-size: 25px;
+    }
+
+    .detailed-post .content h2 {
+        font-size: 20px;
+    }
 
     .detailed-post .columns {
         flex-direction: column;

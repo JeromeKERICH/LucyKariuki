@@ -170,6 +170,7 @@ ul {
     transition: all 0.4s ease-in-out;
     font-size: 14px;
     border-radius: 5px;
+    margin-top: 20px;
 }
 
 .btn-container {
@@ -177,6 +178,15 @@ ul {
     justify-content: center;
     align-items: center;
     width: 100%;
+    
+}
+
+.btn-container .btn2 {
+    background-color: cadetblue;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
 }
 
 .btn2:hover {
@@ -530,6 +540,7 @@ ul {
 }
 
 
+
 @media (max-width: 768px) {
     .about {
         font-size: 24px; 
@@ -537,7 +548,7 @@ ul {
     }
 
     .about h2 {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .about-con {
@@ -547,6 +558,10 @@ ul {
 
     .content { 
         padding: 10px; 
+    }
+
+    .content h3 {
+        font-size: 20px;
     }
     .about-con .image {
         flex: 1 1 100%;
@@ -579,6 +594,10 @@ ul {
 
     #text.expanded {
         max-height: none; /* Show full content when expanded */
+    }
+
+    .CTA p {
+        padding: 0 20px;
     }
 }
 
@@ -683,7 +702,7 @@ ul {
     }
 
     .benefits-section h2 {
-        font-size: 30px;
+        font-size: 25px;
     }
     .benefits-container {
         flex-direction: column;
@@ -728,6 +747,7 @@ ul {
     font-weight: 400;
     color: var(--c-brand);
     line-height: 1.2;
+    margin-bottom: 30px;
 }
 
 .testimonials {
@@ -739,8 +759,9 @@ ul {
 }
 
 .tes-content .text-box h3 {
-    color: var(--c-dark);
-    font-size: 24px;
+    color: cadetblue;
+    font-size: 20px;
+    
 }
 
 .tes-item {
