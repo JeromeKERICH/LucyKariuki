@@ -188,10 +188,42 @@
                 </ul>
             </div>
 
-            <p>Ready to Transform Your Brand? <a href="#">Start Here</a></p>
+            <p>Ready to Transform Your Brand? <a href="#" id="show-service-link">Start Here</a></p>
+
+            <!-- Service Form -->
+                <div id="service-form">
+                    <button id="close-service-form">X</button>
+                    <h2>Select Services</h2>
+                    <form id="service-form-content">
+                        <div class="form-group">
+                            <label for="services" class="serv">Choose Services:</label>
+                            <div>
+                                <input type="checkbox" id="service1" name="services" value="Web Development">
+                                <label for="service1">Copywriting</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="service2" name="services" value="LinkedIn Coaching">
+                                <label for="service2">Ghostwriting</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="service3" name="services" value="Career Development">
+                                <label for="service3">Content Writing</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="service4" name="services" value="Graphic Design">
+                                <label for="service4">Training & Mentorship</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Send to WhatsApp</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+    
 
 
 
@@ -369,7 +401,7 @@
                     const serviceList = heading.nextElementSibling;
                     serviceList.classList.toggle('active');
                     
-                    // Toggle the rotate-icon class on the icon element
+                    
                     const icon = heading.querySelector('i');
                     icon.classList.toggle('rotate-icon');
                 });
@@ -409,25 +441,48 @@
         });
     });
 
-
-    // JavaScript to Toggle Form Visibility
+// JavaScript to Toggle Form Visibility
     document.getElementById('show-form-link').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        var form = document.getElementById('partnership-form');
+        form.style.display = 'block';
+    });
+
+    document.getElementById('close-form').addEventListener('click', function() {
+        var form = document.getElementById('partnership-form');
+        form.style.display = 'none';
+    });
+
+    document.getElementById('form').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        var form = document.getElementById('partnership-form');
+        form.style.display = 'none';
+        alert('Form submitted successfully!');
+        
+    });
+    
+
+    //java services
+    document.getElementById('show-service-link').addEventListener('click', function(event) {
             event.preventDefault(); 
-            var form = document.getElementById('partnership-form');
-            form.style.display = 'block';
+            var form = document.getElementById('service-form');
+            form.style.display = form.style.display === 'block' ? 'none' : 'block'; 
         });
 
-        document.getElementById('close-form').addEventListener('click', function() {
-            var form = document.getElementById('partnership-form');
+        document.getElementById('close-service-form').addEventListener('click', function() {
+            var form = document.getElementById('service-form');
             form.style.display = 'none';
         });
 
-        document.getElementById('form').addEventListener('submit', function(event) {
+        document.getElementById('service-form-content').addEventListener('submit', function(event) {
             event.preventDefault(); 
-            var form = document.getElementById('partnership-form');
-            form.style.display = 'none';
-            alert('Form submitted successfully!');
-           
+            var service = document.getElementById('service').value;
+            var phoneNumber = '+254729442536';
+            var message = encodeURIComponent('I am interested in the following service: ' + service);
+            var whatsappUrl = 'https://wa.me/' + phoneNumber + '?text=' + message;
+
+            window.location.href = whatsappUrl;
+            document.getElementById('service-form').style.display = 'none'; 
         });
 </script>
 
