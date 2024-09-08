@@ -414,6 +414,109 @@ ul {
     transform: rotate(360deg);
 }
 
+
+/*proposal form*/
+
+#show-form-link {
+    display: inline-block;
+    color: white;
+    background: cadetblue;
+    border: 1px solid transparent;
+    padding: 12px 25px;
+    line-height: 1;
+    font-size: 14px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all 0.55s ease;
+}
+#show-form-link:hover {
+    background-color: var(--c-brand);
+}
+
+#close-form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: cadetblue;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+#close-form:hover {
+    background-color: cadetblue;
+}
+
+/* Form Style */
+#partnership-form {
+    display: none; 
+    position: absolute;
+    top: 100px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    z-index: 1000;
+}
+
+#partnership-form  h1 {
+    color: var(--c-brand);
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#partnership-form .form-group {
+    margin-bottom: 15px;
+}
+#partnership-form .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+#partnership-form .form-group input, 
+#partnership-form .form-group textarea, 
+#partnership-form .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#partnership-form .form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+#partnership-form .form-group button {
+    background-color: cadetblue;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#partnership-form .form-group button:hover {
+    background-color: var(--c-brand);
+}
+
+@media (max-width: 600px) {
+    #partnership-form {
+        width: 80%;
+        top: 20%;
+        padding: 15px;
+    }
+    #show-form-link {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
 @media (max-width: 1024px) {
     .section .container-section {
         width: 90%;
@@ -900,6 +1003,10 @@ ul {
     padding: 20px;
     min-width: 300px;
     max-width: 50%;
+}
+
+.contact-form .message {
+    color: var(--c-body);
 }
 
 .contact-section h1 {

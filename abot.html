@@ -11,6 +11,13 @@
     <script src="https://unpkg.com/@darius/requestanimationframe-polyfill@0.1.2"></script>
     <script src="https://unpkg.com/swiped-events@1.1.1/dist/swiped-events.min.js"></script>
 
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("EVxKkJEdp05QG4v1s"); // Replace with your actual User ID from EmailJS
+        })();
+    </script>
+
 </head>
 <body>
     <div class="navbar">
@@ -55,11 +62,10 @@
                     <a href="#" class="read-more" data-target="read-more">Read More</a>
                     
                     <div class="button">
-                        <a href="#">Partner With Lucy</a>
+                        <a id="show-form-link" href="#">Partner with Lucy</a>
                     </div>
                 </div>
             </div>
-            
             <div class="image-section">
                 <img src="images/lucy-min-removebg-preview.png" alt="">
             </div>
@@ -69,6 +75,54 @@
                 <a href="https://www.tiktok.com/@wanjerik?_t=8pQzH5sjf9S&_r=1"><i class="fab fa-tiktok"></i></a>
                 <a href="https://www.instagram.com/wanjerry_k?utm_source=qr&igsh=MXh3aHl0aWQ5Mm15ZA=="><i class="fab fa-instagram"></i></a>
             </div>
+        </div>
+
+        <div id="partnership-form">
+            <button id="close-form">X</button>
+            <h1>Partnership Form</h1>
+            <form id="form" action="YOUR_FORM_SUBMISSION_URL" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company/Organization (if applicable):</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="contact-method">Preferred Mode of Contact:</label>
+                    <select id="contact-method" name="contact-method" required>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                        <option value="whatsapp">WhatsApp</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="partnership">Partnership Interest:</label>
+                    <select id="partnership" name="partnership" required>
+                        <option value="sponsorship">Sponsorship</option>
+                        <option value="collaboration">Collaboration on Events/Workshops</option>
+                        <option value="content-creation">Content Creation</option>
+                        <option value="resource-sharing">Resource Sharing</option>
+                        <option value="other">Other (please specify)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="proposal">Brief Description of Partnership Proposal:</label>
+                    <textarea id="proposal" name="proposal" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -211,12 +265,13 @@
     </div>
     <div class="contact-form">
         <h3>Send a Message</h3>
-        <form action="#" method="post">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
+        <form id="contact-form">
+            <input id="name" type="text" name="from_name" placeholder="Your Name" required>
+            <input id="email" type="email" name="from_email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
+        <p id="status-message" class="message"></p>
     </div>
 </div>
 
@@ -322,6 +377,59 @@
             
 
     </script>
+
+
+ <!--email manager-->   
+    
+ <script type="text/javascript">
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        
+        emailjs.sendForm('service_8bcoc5i', 'template_oj6uzg2', this)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            document.getElementById('status-message').innerText = "Message sent successfully!";
+            
+            
+            document.getElementById('contact-form').reset();
+
+            
+            setTimeout(function() {
+                document.getElementById('status-message').innerText = "";
+            }, 2000); 
+        }, function(error) {
+            console.log('FAILED...', error);
+            document.getElementById('status-message').innerText = "Message failed to send.";
+            
+            
+            setTimeout(function() {
+                document.getElementById('status-message').innerText = "";
+            }, 2000);
+        });
+    });
+
+
+    // JavaScript to Toggle Form Visibility
+    document.getElementById('show-form-link').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            var form = document.getElementById('partnership-form');
+            form.style.display = 'block';
+        });
+
+        document.getElementById('close-form').addEventListener('click', function() {
+            var form = document.getElementById('partnership-form');
+            form.style.display = 'none';
+        });
+
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            var form = document.getElementById('partnership-form');
+            form.style.display = 'none';
+            alert('Form submitted successfully!');
+           
+        });
+</script>
 
 </body>
 </html>

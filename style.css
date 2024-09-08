@@ -332,8 +332,9 @@ ul {
 .hero-img img {
     width: 100%;
     height: auto;
-    max-width: 600px;
+    max-width: 100%;
     object-fit: cover;
+    height: auto;
 }
 
 .hero-text a {
@@ -377,40 +378,52 @@ ul {
 }
 
 
-
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .hero {
         grid-template-columns: 1fr;
-        padding: 0 8%;
-        text-align: start;
-        
-    }
-
-    .hero-text {
-        margin-bottom: 30px;
-        margin-top: 100px;
+        padding: 120px 8%;
+        text-align: center;
+        margin-bottom: 10px; 
     }
 
     .hero-text h1 {
-        font-size: 50px;
+        font-size: 48px;
+    }
+
+    .hero-text h4 {
+        font-size: 18px;
     }
 
     .hero-text h5 {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .hero-text p {
-        text-align: justify;
+        margin-bottom: 15px;
+        font-size: 14px;
     }
 
-    .icons {
-        display: none;
+    .hero-img img {
+        max-width: 90%;
+    }
+
+    .hero-text a {
+        font-size: 14px;
+        padding: 10px 20px;
     }
 }
 
+/* Adjustments for smaller screens */
 @media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 100px 8%;
+        text-align: start;
+        margin-bottom: 10px; 
+    }
+
     .hero-text h1 {
-        font-size: 40px;
+        font-size: 32px;
     }
 
     .hero-text h4 {
@@ -423,10 +436,11 @@ ul {
 
     .hero-text p {
         margin-bottom: 10px;
+        font-size: 14px;
     }
 
     .hero-img img {
-        max-width: 500px;
+        max-width: 100%;
     }
 
     .hero-text a {
@@ -434,29 +448,6 @@ ul {
         padding: 10px 20px;
     }
 }
-
-@media (max-width: 576px) {
-
-    .hero-text h1 {
-        font-size: 30px;
-    }
-
-    .hero-text p {
-        font-size: 14px;
-    }
-
-    .hero-img img {
-        max-width: 350px;
-    }
-}
-
-
-
-
-
-
-
-
 
 
 
@@ -526,11 +517,7 @@ ul {
     text-align: justify;
 }
 
-#text {
-    display: none;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
+
 
 /* Hide the button by default */
 #read-more-btn {
@@ -946,6 +933,10 @@ ul {
 
 .contact-form button:hover {
     background-color: var(--c-brand);
+}
+
+.contact-form .message {
+    color: var(--c-body);
 }
 
 /* Responsive Design */

@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos/dist/aos.css">
 
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("EVxKkJEdp05QG4v1s"); // Replace with your actual User ID from EmailJS
+        })();
+    </script>
+
 </head>
 <body>
     <div class="navbar">
@@ -35,7 +42,7 @@
             <h1>Journey with a Thriving Career</h1>
             <p>Discover your talents, learn new skills, and build a flexible career when you join our community of empowered moms</p>
             <a href="#">Contact Us</a>
-            <a href="abot.html">Explore services</a>
+            <a href="abot.html" id="services">Explore services</a>
         
         </div>
     
@@ -86,7 +93,7 @@
         </div>
 
         <div class="image">
-            <img src="images/3-min.jpg" alt="Description of the image">
+            <img src="images/8-min.jpg" alt="Description of the image">
         </div>
     </div>
 
@@ -179,12 +186,13 @@
         </div>
         <div class="contact-form">
             <h3>Send a Message</h3>
-            <form action="#" method="post">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
+            <form id="contact-form">
+                <input id="name" type="text" name="from_name" placeholder="Your Name" required>
+                <input id="email" type="email" name="from_email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
+            <p id="status-message" class="message"></p>
         </div>
     </div>
 
@@ -308,9 +316,42 @@
 
 
 
-
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--email manager-->   
+
+    <script type="text/javascript">
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            
+            emailjs.sendForm('service_8bcoc5i', 'template_oj6uzg2', this)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                document.getElementById('status-message').innerText = "Message sent successfully!";
+                
+                
+                document.getElementById('contact-form').reset();
+
+                
+                setTimeout(function() {
+                    document.getElementById('status-message').innerText = "";
+                }, 2000); 
+            }, function(error) {
+                console.log('FAILED...', error);
+                document.getElementById('status-message').innerText = "Message failed to send.";
+                
+                
+                setTimeout(function() {
+                    document.getElementById('status-message').innerText = "";
+                }, 2000);
+            });
+        });
+    </script>
+
+
+    </script>
+
     <script>
         const swiper = new Swiper('.js-slider', {
             grapCursor: true,

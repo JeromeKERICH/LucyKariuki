@@ -44,24 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // contact //
 
 
-document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
-    var email = document.getElementById('email').value;
 
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    var message = document.getElementById('message');
-  
-    if (emailPattern.test(email)) {
-      message.textContent = 'Email is valid!';
-      message.style.color = 'green';
-  
-      document.getElementById('myForm').reset();
-    } else {
-
-      message.textContent = 'Please enter a valid email address.';
-      message.style.color = 'red';
-    }
-  });
   
 
 
