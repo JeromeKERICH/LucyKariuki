@@ -484,20 +484,34 @@
             selectedServices.push(checkbox.value);
         });
 
-       
+        
         if (selectedServices.length === 0) {
             alert('Please select at least one service.');
             return;
         }
 
-    
-        var phoneNumber = '+254729442536'; 
-        var message = encodeURIComponent('I am interested in the following services: ' + selectedServices.join(', '));
-        var whatsappUrl = 'https://wa.me/' + phoneNumber + '?text=' + message;
+        
+        var message = `Hello, I am interested in the following services:\n\n${selectedServices.join('\n')}\n\nPlease contact me at your earliest convenience for more details.\nThank you!`;
 
+        
+        var phoneNumber = '+254729442536';
+        var whatsappUrl = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
+
+    
         window.location.href = whatsappUrl;
-        document.getElementById('service-form').style.display = 'none'; 
+
+        
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+
+        
+        document.getElementById('service-form').style.display = 'none';
+
+       
+        document.getElementById('service-form-content').reset();
     });
+
 </script>
 
 
