@@ -97,22 +97,6 @@ function hideDetails() {
 
 
 
-//services 
-const serviceHeadings = document.querySelectorAll('.service_heading');
-
-serviceHeadings.forEach(heading => {
-    heading.addEventListener('click', () => {
-        const serviceList = heading.nextElementSibling;
-        serviceList.classList.toggle('active');
-        
-        // Toggle the rotate-icon class on the icon element
-        const icon = heading.querySelector('i');
-        icon.classList.toggle('rotate-icon');
-    });
-});
-
-
-
 
 
 
