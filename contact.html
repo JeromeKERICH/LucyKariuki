@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("EVxKkJEdp05QG4v1s"); 
+        })();
+    </script>
 </head>
 <body>
 
@@ -30,21 +37,21 @@
         
         <div class="contact-form">
             <h2>Leave a Message</h2>
-            <form id="contactForm" action="mail.thrivingmomspace.com" method="POST">
+            <form id="contact-form">
                 <div class="form-group">
-                    <input type="text" name="name" required>
-                    <label for="name">Name</label>
+                    <input id="name" type="text" name="from_name" placeholder="Your Name" required>
+                    
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" required>
-                    <label for="email">Email</label>
+                    <input id="email" type="email" name="from_email" placeholder="Your Email" required>
+                    
                 </div>
                 <div class="form-group">
-                    <textarea name="message" rows="5" required></textarea>
-                    <label for="message">Message</label>
+                    <textarea  id="message" name="message" placeholder="Your Message"></textarea>
                 </div>
                 <button type="submit">Send</button>
             </form>
+            <p id="status-message" class="message"></p>
         </div>
     </div>
 
@@ -69,25 +76,37 @@
 
 
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+    <!--email manager-->   
 
-            var form = event.target;
-            var formData = new FormData(form);
-            var resultMessage = document.getElementById('result');
+    <script type="text/javascript">
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
 
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-            }).then(response => response.text()).then(text => {
-                resultMessage.textContent = text;
-                form.reset(); // Clear the form after successful submission
-            }).catch(error => {
-                resultMessage.textContent = "Error submitting form!";
+            
+            emailjs.sendForm('service_8bcoc5i', 'template_oj6uzg2', this)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                document.getElementById('status-message').innerText = "Message sent successfully!";
+                
+                
+                document.getElementById('contact-form').reset();
+
+                
+                setTimeout(function() {
+                    document.getElementById('status-message').innerText = "";
+                }, 2000); 
+            }, function(error) {
+                console.log('FAILED...', error);
+                document.getElementById('status-message').innerText = "Message failed to send.";
+                
+                
+                setTimeout(function() {
+                    document.getElementById('status-message').innerText = "";
+                }, 2000);
             });
         });
     </script>
+
 
 
 </body>

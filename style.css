@@ -107,8 +107,8 @@ ul {
 
 .container .logo {
     padding-top: 30px;
-    max-width: 400px; /* Ensures the image does not exceed its container width */
-    height: auto; /* Maintains the aspect ratio */
+    max-width: 400px; 
+    height: auto; 
     width: auto;
 }
 
@@ -256,7 +256,7 @@ ul {
 
     @media (max-width: 768px) {
         .navbar .container {
-            width: 95%; /* Adjust the container width for smaller screens */
+            width: 95%; 
         }
 
         .container .logo {
@@ -298,7 +298,7 @@ ul {
 }
 
 .hero-text h5 {
-    font-size: 16px;
+    font-size: 25px;
     font-weight: 600;
     color: var(--c-body);
     margin-bottom: 20px;
@@ -395,7 +395,7 @@ ul {
     }
 
     .hero-text h5 {
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .hero-text p {
@@ -431,7 +431,7 @@ ul {
     }
 
     .hero-text h5 {
-        font-size: 12px;
+        font-size: 18px;
     }
 
     .hero-text p {
@@ -572,15 +572,15 @@ ul {
 
     #text {
         max-height: 100px;
-        display: none; /* Default height on small screens */
+        display: none; 
     }
 
     #read-more-btn {
-        display: inline; /* Show the button on small screens */
+        display: inline;
     }
 
     #text.expanded {
-        max-height: none; /* Show full content when expanded */
+        max-height: none; 
     }
 
     .CTA p {
@@ -785,6 +785,7 @@ ul {
     text-align: justify;
     margin-top: 20px;
     color: var(--c-body);
+    font-style: italic;
 }
 
 .tes-item .rating {

@@ -107,8 +107,8 @@ ul {
 
 .container .logo {
     padding-top: 30px;
-    max-width: 400px; /* Ensures the image does not exceed its container width */
-    height: auto; /* Maintains the aspect ratio */
+    max-width: 400px; 
+    height: auto; 
     width: auto;
 }
 
@@ -246,7 +246,7 @@ ul {
 
     @media (max-width: 768px) {
         .navbar .container {
-            width: 95%; /* Adjust the container width for smaller screens */
+            width: 95%; 
         }
 
         .container .logo {

@@ -188,6 +188,10 @@ ul {
     transition: all 0.3s ease;
 }
 
+.form-group .message {
+    color: var(--c-body);
+}
+
 .form-group input:focus + label,
 .form-group input:not(:placeholder-shown) + label,
 .form-group textarea:focus + label,
@@ -229,6 +233,7 @@ button:hover {
     }
     
 }
+
 
 .whatsapp_container {
     position: relative;
