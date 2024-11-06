@@ -10,13 +10,6 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos/dist/aos.css">
 
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("EVxKkJEdp05QG4v1s"); 
-        })();
-    </script>
-
 </head>
 <body>
     <div class="navbar">
@@ -247,7 +240,7 @@
                                     
                                 </div>
                             </div>
-                            <p>""Lucy has been a great source of inspiration and guidance on my journey to success as a freelance writer. Her expertise in digital skills among them freelance writing, and her unwavering passion for helping young moms like me has been invaluable. Through her guidance and support, I've been able to harness the skills I need to not only build my confidence, but also monetize my talents in the competitive digital space. "</p>
+                            <p>"Lucy has been a great source of inspiration and guidance on my journey to success as a freelance writer. Her expertise in digital skills among them freelance writing, and her unwavering passion for helping young moms like me has been invaluable. Through her guidance and support, I've been able to harness the skills I need to not only build my confidence, but also monetize my talents in the competitive digital space."</p>
                             
                         </div>
                     </div>
@@ -317,37 +310,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!--email manager-->   
-
-    <script type="text/javascript">
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); 
-
-            
-            emailjs.sendForm('service_x9i5xk2', 'template_9ogmeli', this)
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                document.getElementById('status-message').innerText = "Message sent successfully!";
-                
-                
-                document.getElementById('contact-form').reset();
-
-                
-                setTimeout(function() {
-                    document.getElementById('status-message').innerText = "";
-                }, 2000); 
-            }, function(error) {
-                console.log('FAILED...', error);
-                document.getElementById('status-message').innerText = "Message failed to send.";
-                
-                
-                setTimeout(function() {
-                    document.getElementById('status-message').innerText = "";
-                }, 2000);
-            });
-        });
-    </script>
 
 
     </script>

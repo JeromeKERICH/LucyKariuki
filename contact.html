@@ -8,12 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("EVxKkJEdp05QG4v1s"); 
-        })();
-    </script>
+   
 </head>
 <body>
 
@@ -61,9 +56,10 @@
 
 
     <div class="whatsapp_container">
-        <a href="https://wa.me/254729442536" class="whatsapp_float" target="_blank">
-            <i class="fab fa-whatsapp whatsapp-icon"></i>
-        </a>
+            <a href="https://wa.me/254729442536" class="whatsapp_float" target="_blank">
+                <i class="fab fa-whatsapp whatsapp-icon"></i>
+            </a>
+        
     </div>
     
     
@@ -72,40 +68,7 @@
 
 
 
-
-
-
-
-    <!--email manager-->   
-
-    <script type="text/javascript">
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); 
-
-            
-            emailjs.sendForm('service_x9i5xk2', 'template_9ogmeli', this)
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                document.getElementById('status-message').innerText = "Message sent successfully!";
-                
-                
-                document.getElementById('contact-form').reset();
-
-                
-                setTimeout(function() {
-                    document.getElementById('status-message').innerText = "";
-                }, 2000); 
-            }, function(error) {
-                console.log('FAILED...', error);
-                document.getElementById('status-message').innerText = "Message failed to send.";
-                
-                
-                setTimeout(function() {
-                    document.getElementById('status-message').innerText = "";
-                }, 2000);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 
 
 

@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOY_PATH=/home/username/public_html # Adjust this path if needed
+    - /bin/cp -rf . $DEPLOY_PATH # Copies files from the repository to your website directory

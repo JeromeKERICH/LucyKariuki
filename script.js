@@ -1,75 +1,151 @@
 const navbar = document.querySelector('.navbar')
-const hamb = document.querySelector('.hamb')
-const navLinks = document.querySelector('.nav-links')
-const navLinksLi = document.querySelectorAll('.nav-links li')
-const workItems = document.querySelectorAll('.work')
+    const hamb = document.querySelector('.hamb')
+    const navLinks = document.querySelector('.nav-links')
+    const navLinksLi = document.querySelectorAll('.nav-links li')
+    const workItems = document.querySelectorAll('.work')
 
-window.addEventListener('scroll', () => {
-    if(this.scrollY >= 100) {
-        navbar.classList.add('scrolled')
-    } else {
-        navbar.classList.remove('scrolled')
+    window.addEventListener('scroll', () => {
+        if(this.scrollY >= 100) {
+            navbar.classList.add('scrolled')
+        } else {
+            navbar.classList.remove('scrolled')
+        }
+    })
+
+    hamb.addEventListener('click', () => {
+        navLinks.classList.toggle('active')
+        hamb.classList.toggle('active')
+    })
+
+
+
+    navLinksLi.forEach(li =>li.addEventListener('click', ()=> {
+        navLinksLi.forEach(li => li.classList.remove('active'))
+
+        hamb.classList.remove('active')
+        navLinks.classList.remove('active')
+    }))
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        var h1Element = document.querySelector('.hero h2');
+        
+        
+        h1Element.classList.add('slide-in');
+    });
+        document.addEventListener("DOMContentLoaded", function() {
+        const readMoreBtn = document.querySelector('.read-more');
+        const moreContent = document.querySelector('.more-content');
+        
+        readMoreBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            if (moreContent.style.display === 'none' || !moreContent.style.display) {
+                moreContent.style.display = 'block';
+                readMoreBtn.textContent = 'Read Less';
+            } else {
+                moreContent.style.display = 'none';
+                readMoreBtn.textContent = 'Read More';
+            }
+        });
+    });
+
+    const serviceHeadings = document.querySelectorAll('.service_heading');
+
+        serviceHeadings.forEach(heading => {
+            heading.addEventListener('click', () => {
+                const serviceList = heading.nextElementSibling;
+                serviceList.classList.toggle('active');
+                
+                
+                const icon = heading.querySelector('i');
+                icon.classList.toggle('rotate-icon');
+            });
+        });
+        
+
+
+// JavaScript to Toggle Form Visibility
+document.getElementById('show-form-link').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    var form = document.getElementById('partnership-form');
+    form.style.display = 'block';
+});
+
+document.getElementById('close-form').addEventListener('click', function() {
+    var form = document.getElementById('partnership-form');
+    form.style.display = 'none';
+});
+
+document.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    var form = document.getElementById('partnership-form');
+    form.style.display = 'none';
+    alert('Form submitted successfully!');
+    
+});
+
+//java services
+
+document.getElementById('show-service-link').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    var form = document.getElementById('service-form');
+    form.style.display = form.style.display === 'block' ? 'none' : 'block';
+});
+
+document.getElementById('close-service-form').addEventListener('click', function() {
+    var form = document.getElementById('service-form');
+    form.style.display = 'none';
+});
+
+document.getElementById('service-form-content').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    var selectedServices = [];
+    var checkboxes = document.querySelectorAll('input[name="services"]:checked');
+    checkboxes.forEach(function(checkbox) {
+        selectedServices.push(checkbox.value);
+    });
+
+    if (selectedServices.length === 0) {
+        alert('Please select at least one service.');
+        return;
     }
-})
 
-hamb.addEventListener('click', () => {
-    navLinks.classList.toggle('active')
-    hamb.classList.toggle('active')
-})
+    var message = `Hello, I am interested in the following services:\n\n${selectedServices.join('\n')}\n\nPlease contact me at your earliest convenience for more details.\nThank you!`;
 
+    var phoneNumber = '+254729442536';
+    var whatsappUrl = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
 
+    window.location.href = whatsappUrl;
 
-navLinksLi.forEach(li =>li.addEventListener('click', ()=> {
-    navLinksLi.forEach(li => li.classList.remove('active'))
+    document.getElementById('service-form-content').reset(); // This resets the form, including checkboxes
 
-    hamb.classList.remove('active')
-    navLinks.classList.remove('active')
-}))
-
-
-document.addEventListener('DOMContentLoaded', function() {
-
-    var h1Element = document.querySelector('.hero h2');
-    
-    
-    h1Element.classList.add('slide-in');
+    document.getElementById('service-form').style.display = 'none';
 });
 
 
 
+// JavaScript to Toggle Form Visibility
+document.getElementById('show-form-link').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    var form = document.getElementById('partnership-form');
+    form.style.display = 'block';
+});
 
+document.getElementById('close-form').addEventListener('click', function() {
+    var form = document.getElementById('partnership-form');
+    form.style.display = 'none';
+});
 
-  
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const readMoreButton = document.querySelector('.read-more');
-    const moreContent = document.getElementById('more-intro');
-
-    readMoreButton.addEventListener('click', function(event) {
-      event.preventDefault(); 
-
-      if (moreContent.style.display === 'none' || moreContent.style.display === '') {
-        moreContent.style.display = 'inline';
-        readMoreButton.textContent = 'Read Less';
-      } else {
-        moreContent.style.display = 'none'; 
-        readMoreButton.textContent = 'Read More'; 
-      }
-    });
-  });
-
-
-
-
-
-
-
-
-
-
-
-
+document.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    var form = document.getElementById('partnership-form');
+    form.style.display = 'none';
+    alert('Form submitted successfully!');
+    
+});
 
 
 
