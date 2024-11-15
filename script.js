@@ -81,16 +81,16 @@ document.getElementById('close-form').addEventListener('click', function() {
 document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault(); 
 
-    var form = document.getElementById('form'); // Reference the form element
-    var formContainer = document.getElementById('partnership-form'); // Reference the form container
+    var form = document.getElementById('form'); 
+    var formContainer = document.getElementById('partnership-form'); 
 
-    // Hide the form container after submission
+    
     formContainer.style.display = 'none';
 
-    // Show success alert
+
     alert('Form submitted successfully!');
 
-    // Reset the form fields after 1 second
+    
     setTimeout(function() {
         form.reset();
     }, 1000);
@@ -140,25 +140,7 @@ document.getElementById('service-form-content').addEventListener('submit', funct
 
 
 
-// JavaScript to Toggle Form Visibility
-document.getElementById('show-form-link').addEventListener('click', function(event) {
-    event.preventDefault(); 
-    var form = document.getElementById('partnership-form');
-    form.style.display = 'block';
-});
 
-document.getElementById('close-form').addEventListener('click', function() {
-    var form = document.getElementById('partnership-form');
-    form.style.display = 'none';
-});
-
-document.getElementById('form').addEventListener('submit', function(event) {
-    event.preventDefault(); 
-    var form = document.getElementById('partnership-form');
-    form.style.display = 'none';
-    alert('Form submitted successfully!');
-    
-});
 
 //Contact section
 
