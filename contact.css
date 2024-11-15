@@ -216,6 +216,11 @@ button:hover {
     background: var(--c-brand);
 }
 
+#status-message {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
 @media (max-width: 768px) {
     .contact-container {
         flex-direction: column;

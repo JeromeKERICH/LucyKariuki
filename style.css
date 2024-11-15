@@ -910,6 +910,11 @@ ul {
     flex-direction: column;
 }
 
+.contact-form label {
+    color: #333;
+    font-size: 20px;
+}
+
 .contact-form input,
 .contact-form textarea {
     padding: 15px;
@@ -938,6 +943,11 @@ ul {
 
 .contact-form .message {
     color: var(--c-body);
+}
+
+#status-message {
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 /* Responsive Design */

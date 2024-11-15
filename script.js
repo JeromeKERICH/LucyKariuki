@@ -80,11 +80,24 @@ document.getElementById('close-form').addEventListener('click', function() {
 
 document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault(); 
-    var form = document.getElementById('partnership-form');
-    form.style.display = 'none';
+
+    var form = document.getElementById('form'); // Reference the form element
+    var formContainer = document.getElementById('partnership-form'); // Reference the form container
+
+    // Hide the form container after submission
+    formContainer.style.display = 'none';
+
+    // Show success alert
     alert('Form submitted successfully!');
-    
+
+    // Reset the form fields after 1 second
+    setTimeout(function() {
+        form.reset();
+    }, 1000);
 });
+
+
+
 
 //java services
 
@@ -146,6 +159,50 @@ document.getElementById('form').addEventListener('submit', function(event) {
     alert('Form submitted successfully!');
     
 });
+
+//Contact section
+
+document.getElementById('web3form').addEventListener('submit', async function (e) {
+    e.preventDefault(); 
+
+    const form = e.target; 
+    const formData = new FormData(form); 
+    const statusMessage = document.getElementById('status-message');
+
+    try {
+   
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+        });
+
+        if (response.ok) {
+      
+            statusMessage.textContent = "Message sent successfully!";
+            statusMessage.style.color = "green";
+
+   
+            document.getElementById('name').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('message').value = "";
+
+           
+            setTimeout(() => {
+                statusMessage.textContent = "";
+            }, 3000);
+        } else {
+
+            statusMessage.textContent = "Failed to send the message. Please try again.";
+            statusMessage.style.color = "red";
+        }
+    } catch (error) {
+    
+        statusMessage.textContent = "An error occurred. Please check your connection.";
+        statusMessage.style.color = "red";
+    }
+});
+
+
 
 
 
